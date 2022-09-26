@@ -1,5 +1,5 @@
-<admission>
-	<person no="1">
+<ADMISSION>
+	<PERSON NO="1">
 		<sl_no>23</sl_no>
 		<NAME>John Carter</NAME>
 		<ADMISSION_DATE>
@@ -7,9 +7,9 @@
 		    <MONTH>12</MONTH>
 		    <YEAR>2015</YEAR>
 		</ADMISSION_DATE>
-	</person>
+	</PERSON>
 
-	<person no="2">
+	<PERSON NO="2">
 		<sl_no>29</sl_no>
 		<NAME>Bob Marshal</NAME>
 		<ADMISSION_DATE>
@@ -17,9 +17,9 @@
 		    <MONTH>01</MONTH>
 		    <YEAR>1999</YEAR>
 		</ADMISSION_DATE>
-	</person>
+	</PERSON>
 
-	<person no="3">
+	<PERSON NO="3">
 		<sl_no>35</sl_no>
 		<NAME>Clark Kent</NAME>
 		<ADMISSION_DATE>
@@ -27,5 +27,5 @@
 		    <MONTH>06</MONTH>
 		    <YEAR>2005</YEAR>
 		</ADMISSION_DATE>
-	</person>
-</admission>
+	</PERSON>
+</ADMISSION>
