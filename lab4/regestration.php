@@ -1,0 +1,101 @@
+<html>
+<head>
+    <title>Personal Profile</title>
+</head>
+<body>
+<?php 
+		session_start();
+		if(isset($_SESSION["validate"])){
+			echo $_SESSION["validate"];
+			session_destroy();
+		}
+	?>
+    <form>
+        <table border="1">
+            <tr>
+                <th colspan="3">Personal Profile</th>
+            </tr>
+            <tr>
+                <td>Name </td>
+                <td><input type="text" name="" value=""></td>
+            </tr>
+            <tr>
+                <td>Email </td>
+                <td><input type="text" name="" value=""></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <input type="radio" name="Gender"/>Male
+                    <input type="radio" name="Gender"/>Female
+                    <input type="radio" name="Gender"/>Other
+                </td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td>dd</td>
+                            <td>/</td>
+                            <td>mm</td>
+                            <td>/</td>
+                            <td>yyyy</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text"></td>
+                            <td></td>
+                            <td><input type="text"></td>
+                            <td></td>
+                            <td><input type="text"></td>
+                            <td></td>
+                        </table> 
+                </td>
+            </tr>
+            <tr>
+                <td>Blood Group</td>
+                <td>
+                    <select name="">
+                        <option value="">A+</option>
+                        <option value="">B+</option>
+                        <option value="">A-</option>
+                        <option value="">B-</option>
+                        <option value="">O+</option>
+                        <option value="">O-</option>
+                        <option value="">AB-</option>
+                        <option value="">AB+</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Degree</td>
+                <td>
+                    <input type="checkbox" name="" value=""/>SSC
+                    <input type="checkbox" name="" value=""/>HSC
+                    <input type="checkbox" name="" value=""/>BSc
+                </td>
+            </tr>
+            <tr>
+                <td>Photo</td>
+                <td>
+                    <input type="file" name="" value="">
+                </td>
+            </tr>
+                <tr><td><td></td></td>
+            </tr>
+            <tr>
+                <td colspan="3"></td>
+            </tr>
+            <tr>
+                <td colspan="3" align="right">
+                    <input type="submit" name="" value="Submit" >
+                    <input type="reset" name="" value="Reset" >
+                </td>
+
+            </tr>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
