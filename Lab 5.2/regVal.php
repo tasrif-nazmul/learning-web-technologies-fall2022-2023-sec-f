@@ -1,15 +1,28 @@
 <?php
+
+
+
     session_start();
-    $email = $_POST['name'];
+    $name = $_POST['name'];
     $email = $_POST['email'];
     $username = $_POST['username'];
     $password = $_POST['password'];
+    $cpassword = $_POST['ConfirmPassword'];
+    $gender = $_POST['gender'];
+    $dob =  $_POST['dob'];
+    
     
 
-    if($_name =='name' || $_email == 'email' || $username == "" || $password == "" || $email == ""){
-        header('location: regestration.php?err=null');
-    }else{
-        $user = ['name'=> $name, 'email'=>$email, 'username'=> $username, 'password'=>$password, 'email'=>$email];
+    
+    if($name =="" || $email == "" || $username == "" || $password == "" || $cpassword == "" || $gender == "" || $dob == ""){
+        header('location: registration.php?err=null');
+    }
+    else if($password!=$cpassword)
+    {
+        header('location: registration.php?err=invalid');
+    }
+    else{
+        $user = ['name'=> $name, 'email'=>$email, 'username'=> $username, 'password'=>$password, 'gender'=>$gender, 'dob'=>$dob];
         $_SESSION['user'] = $user;
         header('location: login.php');
     }

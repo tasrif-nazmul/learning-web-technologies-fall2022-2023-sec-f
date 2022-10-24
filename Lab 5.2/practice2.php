@@ -1,29 +1,10 @@
-<?php 
-
-    if(isset($_GET['err'])){
-        if($_GET['err'] == 'null'){
-            echo "invalid username/password";
-        }
-
-        if($_GET['err'] == 'invalid'){
-            echo "Invalid username or password. Please Check";
-        }
-
-        if($_GET['err'] == 'bad_request'){
-            echo "please login first ...";
-        }
-    }
-
-?>
-
-
 <html>
 <head>
-    <title>Login</title>
+    <title>Document</title>
 </head>
 <body>
-<center>
-    <form action="loginVal.php" method="post">
+    <center>
+    <form action="">
         <table border="2px">
             <tr>
                 <td width="300px">
@@ -38,8 +19,7 @@
             <tr>
                 <td colspan=2 align="center">
                     <fieldset>
-                    Username <input type="text" name="username">
-                    <br>
+                    Username <input type="text" name="username"><br>
                     Password <input type="password" name="password"><br>
                     <input type="submit" name="btn" value="Submit"/>
                     <a href="forgottenPass.php">Forgotten Password</a></td>
