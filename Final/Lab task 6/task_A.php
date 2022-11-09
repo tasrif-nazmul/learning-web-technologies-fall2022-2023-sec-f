@@ -1,30 +1,25 @@
-<?php 
-
-    $con = mysqli_connect('localhost', 'root', '', 'webtech');
-
-    // if($con){
-    //     echo "success";
-    // }else{
-    //     echo "error";
-    // }
-
-    $sql = "select * from users";
-    $result = mysqli_query($con, $sql);
+<html>
+<head>
+    <title>Add Product</title>
+    <body>
+    <fieldset>
+    <legend>ADD PRODUCT</legend>
+         <table>
+             
+            <form method="post" action="addProductCheck.php" enctype=""> 
+                
+                <table>
+                <tr><td>Name<br><input type="text" name="name"></input></td></tr>
+                    <tr><td>Buying Price<br><input type="text" name="buyingPrice"></input></td></tr>
+                    <tr><td>Selling Price<br><input type="text" name="sellingPrice"></input></td></tr>
+                    <tr><td><hr></td></tr>
+                    <tr><td><input type="radio" name="display" value="yes"></input>Display</td></tr>
+                    <tr><td><hr></td></tr>
+                    <tr><td><input type="submit" value="Submit" ></input> </td></tr>
+</form>
+</table>
  
-    echo "<table border=1> 
-            <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>EMAIL</th>
-            </tr>";
-
-    while($data  = mysqli_fetch_assoc($result)){
-        echo    "<tr>
-                    <td>{$data['id']}</td>        
-                    <td>{$data['username']}</td>        
-                    <td>{$data['email']}</td>        
-                </tr>";
-    }
-
-    echo "</table>";
-?>
+ 
+</fieldset>
+   </body>
+</html>
