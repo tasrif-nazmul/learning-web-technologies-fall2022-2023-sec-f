@@ -18,7 +18,7 @@
                     <td>{$data['Name']}</td>        
                     <td>{$data['profit']}</td>  
                     <td> <a href ='editProducts.php?edit={$data['Name']}'>Edit</a></td>   
-                    <td> <a href ='deleteProducts.php?edit={$data['Name']}'>Delete</a></td>            
+                    <td> <a href ='deleteProducts.php?delete={$data['Name']}'>Delete</a></td>            
                 </tr>";
     }
 
