@@ -6,14 +6,14 @@ session_start();
     {
 		$product_name = $_GET['delete'];
 
-        setcookie('row_name',$name,time()+60*60,'/');
+        setcookie('row_name',$product_name,time()+60*60,'/');
 		 
 		  
 	}
 
 
     $con = mysqli_connect('localhost', 'root', '', 'product_db');
-    $sql = "select * from products where Name='{$name}'";
+    $sql = "select * from products where Name='{$product_name}'";
     $result = mysqli_query($con, $sql);
 
     $data  = mysqli_fetch_assoc($result);
