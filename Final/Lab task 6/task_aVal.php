@@ -1,35 +1,30 @@
 <?php
+    session_start();
+    $name=$_POST['name'];
+    $buingp=$_POST['buingp'];
+    $sellingp=$_POST['sellingp'];
 
-$name= $_POST["name"];
-$buying_price= $_POST["buyingPrice"];
-$selling_price= $_POST["sellingPrice"];
-$display=$_POST["display"];
-
-
-if($name=="" || $buying_price =="" || $selling_price==""  )
-{
-
-    header('location: addProduct.php?err=null');
-
-}
-
-else{  if($display!="yes"){$display="no";}
-
-
-
-    $con = mysqli_connect('localhost', 'root', '', 'product_db');
-        $sql = "insert into products values('{$name}', '{$buying_price}', '{$selling_price}', '{$display}')";
-        $status = mysqli_query($con, $sql);
-        
-        if($status){
-            header('location: addProduct.php?message=adding_successful');
-        }else{
-           echo "Adding Failed!";
+    if(empty($name) || empty($buingp) || empty($sellingp)){
+        $_SESSION['err']="All must be filled up";
+        header('location: task_A.php');
+    }
+    else{
+        $con = mysqli_connect('localhost', 'root', '', 'product_db');
+        if(empty($_POST['display'])){
+            $display="No";
         }
-}
- 
-
-
-
-
+        else{
+            $display="Yes";
+        }
+        $sql1 ="INSERT INTO `products`(`Name`, `BuyingPrice`, `SellingPrice`, `Display`) VALUES ('{$name}','{$buingp}','{$sellingp}','{$display}')";
+        $result1 = mysqli_query($con, $sql1);
+        if($result1>0){
+            $_SESSION['msg']="Add successful<br>";
+            header('location: display.php');
+        }
+        else{
+            $_SESSION['msg']="Add is not successful<br>";
+            header('location: task_A.php');
+        }
+    }
 ?>
