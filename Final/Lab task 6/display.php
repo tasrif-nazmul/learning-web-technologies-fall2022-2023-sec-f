@@ -1,6 +1,6 @@
 <?php
     $con = mysqli_connect('localhost', 'root','','product_db');
-    $sql = "select * from products";
+    $sql = "select Name, SellingPrice - BuyingPrice profit from products";
     $result = mysqli_query($con, $sql);
     // $data = mysqli_fetch_assoc($result);
     // print_r($data);
@@ -9,14 +9,16 @@
             <tr>
                 <th>NAME</th>
                 <th>PROFIT</th>
-                <th>EDIT & DELETE</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
             </tr>";
 
     while($data  = mysqli_fetch_assoc($result)){
         echo    "<tr>
                     <td>{$data['Name']}</td>        
-                    <td>{$data['BuyingPrice']}</td>        
-                    <td>{$data['SellingPrice']}</td>        
+                    <td>{$data['profit']}</td>  
+                    <td> <a href ='editProducts.php?edit={$data['Name']}'>Edit</a></td>   
+                    <td> <a href ='deleteProducts.php?edit={$data['Name']}'>Delete</a></td>            
                 </tr>";
     }
 
