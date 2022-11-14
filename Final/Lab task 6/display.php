@@ -7,6 +7,9 @@
 
     echo "<table border=1> 
             <tr>
+            <td colspan=4 align='center'><a href='task_A.php'>Add Product</a></td>
+            </tr>
+            <tr>
                 <th>NAME</th>
                 <th>PROFIT</th>
                 <th>EDIT</th>
